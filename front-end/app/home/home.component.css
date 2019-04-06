@@ -1,0 +1,11 @@
+Image {
+    border-width: 10;
+    border-color: red;
+}
+
+Button {
+    border-radius: 20;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+}
