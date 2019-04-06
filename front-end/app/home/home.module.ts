@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 
+//Services
+import { RequestTranslationService } from "~/services/src/app/request-translation.service";
+
 @NgModule({
     imports: [
         NativeScriptUISideDrawerModule,
@@ -29,6 +32,9 @@ import { HomeComponent } from "./home.component";
     ],
     declarations: [
         HomeComponent
+    ],
+    providers: [
+        RequestTranslationService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
