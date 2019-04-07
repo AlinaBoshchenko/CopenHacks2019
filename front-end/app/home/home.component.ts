@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { takePicture, requestPermissions } from 'nativescript-camera';
 import { ImageAsset } from 'tns-core-modules/image-asset';
 import { ImageSource, fromAsset } from "tns-core-modules/image-source";
-import {RequestTranslationService} from "~/services/src/app/request-translation.service";
+import {RequestTranslationService} from "~/services/request-translation.service";
+import {LanguagesService} from "~/services/languages.service";
 
 @Component({
     selector: "Home",
@@ -13,7 +14,21 @@ import {RequestTranslationService} from "~/services/src/app/request-translation.
 
 export class HomeComponent {
 
-    constructor(private translationService: RequestTranslationService) { }
+    selectLanguage: boolean = false;
+    languages = ['Lithuanian', 'Danish', 'Russian', 'English'];
+
+    constructor(private translationService: RequestTranslationService,
+                private languageService: LanguagesService) {
+        /*this.languageService.getLanguages().subscribe(
+            result => {
+                console.log('languages: ', result);
+                //this.languages = result;
+            },
+            error => {
+                console.log('error in fetching languages: ', error);
+            }
+        );*/
+    }
 
     public language: string = 'da';
 
@@ -44,5 +59,15 @@ export class HomeComponent {
             'image': image
         };
         this.translationService.requestTranslation(data);
+    }
+
+    onSelectLanguage() {
+        this.selectLanguage = true;
+    }
+
+    onItemTap(language: string) {
+        console.log('language: ', language);
+        this.language = language;
+        this.selectLanguage = false;
     }
 }

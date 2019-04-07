@@ -1,6 +1,19 @@
 <ActionBar title="Camera" class="action-bar">
 </ActionBar>
 
-<GridLayout rows="auto, *, auto">
-	<Button text="Take Picture" (tap)="onTakePictureTap($event)" row="2" padding="10"></Button>
+<GridLayout verticalAlignment="center">
+  <ScrollView class="page">
+    <StackLayout class="home-panel">
+      <ListView *ngIf="selectLanguage" [items]="languages" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-language="item" let-i="index" let-odd="odd" let-even="even">
+          <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+          <StackLayout orientation="horizontal" class="list-group-item">
+            <Label [text]="language"></Label>
+          </StackLayout>
+        </ng-template>
+      </ListView>
+      <Button *ngIf="!selectLanguage" text="Select language" class="btn-language" (tap)="onSelectLanguage($event)" row="1" margin="10" padding="10"></Button>
+      <Button *ngIf="!selectLanguage" text="Take Picture" class="btn-photo" (tap)="onTakePictureTap($event)" row="2" padding="10"></Button>
+    </StackLayout>
+  </ScrollView>
 </GridLayout>

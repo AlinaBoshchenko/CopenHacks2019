@@ -1,11 +1,17 @@
-Image {
-    border-width: 10;
-    border-color: red;
-}
-
 Button {
-    border-radius: 20;
-    background-color: silver;
+    border-radius: 5;
     color: black;
+    height: 60;
+    width: 300;
     font-weight: 600;
 }
+
+.btn-language {
+    background-color: gray;
+}
+
+.btn-photo {
+    background-color: orange;
+}
+
+

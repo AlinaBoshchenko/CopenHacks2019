@@ -14,7 +14,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 
 //Services
-import { RequestTranslationService } from "~/services/src/app/request-translation.service";
+import { RequestTranslationService } from "~/services/request-translation.service";
+import {LanguagesService} from "~/services/languages.service";
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { RequestTranslationService } from "~/services/src/app/request-translatio
         HomeComponent
     ],
     providers: [
-        RequestTranslationService
+        RequestTranslationService,
+        LanguagesService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
