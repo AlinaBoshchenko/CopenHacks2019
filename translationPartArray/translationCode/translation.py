@@ -1,5 +1,4 @@
 # Copenhacks
-
 from google.cloud import translate
 import os
 
