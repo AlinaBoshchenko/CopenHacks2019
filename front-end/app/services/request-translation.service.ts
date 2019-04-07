@@ -8,8 +8,6 @@ export class RequestTranslationService {
 
     requestTranslation(data: object) {
         const url = '/translation.json';
-        console.log('url: ', url);
-        console.log('data: ', data);
         return this.http.post(url, data);
     }
 
