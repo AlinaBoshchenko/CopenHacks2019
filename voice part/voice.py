@@ -17,7 +17,7 @@ variables to secure your subscription keys. The environment variable is
 set to SPEECH_SERVICE_KEY in our sample.
 For example:
 '''
-subscription_key = "e06cfea88c0943adab3a55cc08d9bdb8"
+subscription_key = "key"
 
 
 '''if 'SPEECH_SERVICE_KEY' in os.environ:
@@ -30,7 +30,7 @@ class TextToSpeech(object):
     def __init__(self, subscription_key,listOfWords):
         self.subscription_key =   subscription_key
         print(subscription_key)
-        #self.tts = input("What would you like to convert to speech: ") # Use this if you want to type sentences by yourself
+        #self.tts = input("What would you like to convert to speech: ") 
         self.tts = ','.join(listOfWords)
         self.timestr = time.strftime("%Y%m%d-%H%M")
         self.access_token = None
